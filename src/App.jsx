@@ -3,10 +3,10 @@ import "./App.css";
 
 function App() {
   const [contacts, setContacts] = useState([
-    { id: 1, name: 'John Doe', email: 'john@example.com', phone: '123-456-7890' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', phone: '987-654-3210' },
-    { id: 3, name: 'Alice Johnson', email: 'alice@example.com', phone: '555-123-4567' },
-    { id: 4, name: 'Bob Brown', email: 'bob@example.com', phone: '444-987-6543' },
+    { id: 1, name: 'Bhanu ', email: 'bhanu@gmail.com', phone: '123-456-7890' },
+    { id: 2, name: 'Teju ', email: 'Teju@gmail.com', phone: '987-654-3210' },
+    { id: 3, name: 'Madhav', email: 'Madhav@gmail.com', phone: '555-123-4567' },
+    { id: 4, name: 'Ram', email: 'Ram@gmail.com', phone: '444-987-6543' },
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,7 +15,7 @@ function App() {
   const [newContact, setNewContact] = useState({ name: "", phone: "", email: "" });
   const [editContact, setEditContact] = useState(null);
 
-  // Filtered contacts based on search
+
   const filteredContacts = contacts.filter(
     (c) =>
       c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -23,7 +23,7 @@ function App() {
       c.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Add contact
+  
   const handleAddContact = () => {
     if (!newContact.name || !newContact.phone || !newContact.email) return;
     setContacts([
@@ -34,7 +34,7 @@ function App() {
     setShowAddPopup(false);
   };
 
-  // Edit contact
+  
   const handleEditClick = (contact) => {
     setEditContact({ ...contact });
     setShowEditPopup(true);
@@ -78,8 +78,8 @@ function App() {
               </div>
               <div>
                 <button className="edit" onClick={() => handleEditClick(contact)}>
-                  ✏️
-                </button>
+  Edit
+</button>
                 <button className="delete" onClick={() => handleDelete(contact.id)}>
                   Delete
                 </button>
@@ -91,7 +91,7 @@ function App() {
         )}
       </ul>
 
-      {/* Add Contact Popup */}
+      
       {showAddPopup && (
         <div className="popup-overlay">
           <div className="popup">
@@ -124,7 +124,7 @@ function App() {
         </div>
       )}
 
-      {/* Edit Contact Popup */}
+     
       {showEditPopup && editContact && (
         <div className="popup-overlay">
           <div className="popup">
