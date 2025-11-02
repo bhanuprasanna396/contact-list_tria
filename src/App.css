@@ -55,23 +55,33 @@ h1 {
 
 .contact-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;    
+  align-items: stretch;      
   gap: 15px;
   width: 100%;
   max-width: 400px;
   margin: 20px auto;
   padding: 10px;
-
-  /* 🪄 Make it scroll smoothly when many contacts */
-  max-height: 55vh;        /* limit height to 70% of the screen */
-  overflow-y: auto;         /* enable vertical scrolling */
-  scrollbar-width: thin;    /* Firefox smooth scrollbar */
-  scrollbar-color: #555 #222;  /* scrollbar thumb and track colors */
+  max-height: 55vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222;
 }
 
-/* For Chrome, Edge, etc. */
+.contact-list li {
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;          /* ✅ Uniform height for all cards */
+  width: 100%;                /* ✅ Match container width */
+  box-sizing: border-box;
+}
+
+
+
 .contact-list::-webkit-scrollbar {
   width: 6px;
 }
@@ -128,7 +138,7 @@ button.delete:hover {
   text-decoration: underline;
 }
 
-/* Popup styling */
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -182,7 +192,7 @@ button.delete:hover {
   transition: background 0.2s;
 }
 
-/* 🟢 Add / Save buttons */
+
 .popup-buttons button:first-child {
   background: #22c55e;
 }
@@ -191,7 +201,7 @@ button.delete:hover {
   background: #16a34a;
 }
 
-/* 🔴 Cancel button */
+
 button.cancel {
   background: #ef4444;
 }
